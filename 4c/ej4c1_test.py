@@ -25,21 +25,30 @@ from ej4c1 import calculate_rectangle_area
 def test_calculate_rectangle_area(): 
     # Prueba con valores enteros positivos para ancho y alto.   
     # Write here your code
-
+    width = 3
+    height = 7
+    expected_area = 21
     # Change the following line
-    assert False
+    assert calculate_rectangle_area(width, height) == expected_area
+    print(" Area del rectangulo= ", calculate_rectangle_area(width, height))
     
 def test_value_error_calculate_rectangle_area():
     # Prueba con ancho/alto negativo.
     # Write here your code
-    
+    width = -2
+    height = 8
     # Change the following line
-    assert False
+    with pytest.raises(ValueError):
+        calculate_rectangle_area(width, height)
+    print("se produjo un error: Uno de los datos es negativo")
     
 
 def test_type_error_calculate_rectangle_area():
     # Prueba con ancho/alto no numérico.
     # Write here your code
-    
+    width = 'a'
+    height = 5
     # Change the following line
-    assert False
+    with pytest.raises(TypeError):
+        calculate_rectangle_area(width, height)
+    print("se produjo un error: Uno de los datos no es un numero")
